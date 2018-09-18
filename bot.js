@@ -53,7 +53,25 @@ j = 1;
 
 
 
-
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'العامه')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%دعوه' ,'يتم ارسال رساله لك في الخاص ويوجد بها رابط البوت')
+      .addField('%server' ,'يعطيك معلومات السيرفر')
+      .addField('%inv' ,'يعطيك كم شخص جبت للسيرفر')
+      .addField('%support' ,'رابط سيرفر الدعم الفني ')
+      .addField('%tg' ,'يترجم لك الى 40 لغه تريدها')
+      .addField('%bots' ,'يعطيك كم بوت موجود في السيرفر')
+      .addField('%bans' ,'يعطيك عدد الاشخاص الي مبندين في السيرفر ')
+      .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
+      .addField('%min' ,'يعطيك صوره سكن ماين كرافت يجب كتابة اسم الشخص ')
+      .addField('%المعلومات' ,'يعطيك معلومات عن البوت ')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
 
 
 
