@@ -53,7 +53,7 @@ j = 1;
 
 
  client.on('message', message => {
-	    var prefix = "%";
+	    var prefix = "!!";
               if(!message.channel.guild) return;
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
@@ -100,7 +100,15 @@ j = 1;
 
 
 
-
+client.on('message',function(message) {
+	let prefix = "!!";
+let args = message.content.split(" ").slice(1).join(" ");
+if(message.content.startsWith(prefix + "say")) {
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`لا يوجد لديك صلاحيه حتى تستخدم هذا الامر`)
+if(!args) return;
+message.channel.send(`** ${args}**`); // محطوط # عشان محد يستخدم البوت لتبنيد / طرد احد من السيرفر
+}
+});
 
 
 
