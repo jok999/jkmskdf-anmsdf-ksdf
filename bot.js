@@ -104,7 +104,7 @@ client.on('message',function(message) {
 	let prefix = "!!";
 let args = message.content.split(" ").slice(1).join(" ");
 if(message.content.startsWith(prefix + "say")) {
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`لا يوجد لديك صلاحيه حتى تستخدم هذا الامر`)
+  if(message.author.id !== '292042690470739968')
 if(!args) return;
 message.channel.send(`** ${args}**`); // محطوط # عشان محد يستخدم البوت لتبنيد / طرد احد من السيرفر
 }
