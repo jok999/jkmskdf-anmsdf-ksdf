@@ -239,7 +239,7 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-  if (message.content.startsWith("%صوره")) {
+  if (message.content.startsWith("!!صوره")) {
       var mentionned = message.mentions.users.first();
   var Nizx;
     if(mentionned){
@@ -257,7 +257,7 @@ client.on('message', message => {
 
 
         client.on('message', message => {
-          var prefix = '%';
+          var prefix = '!!';
           if (message.content.startsWith(prefix + 'العاب')) {
       let embed = new Discord.RichEmbed()
       .addField('%عقاب' ,'لعبة العقاب')
@@ -275,7 +275,7 @@ client.on('message', message => {
 
 
         client.on('message', message => {
-          var prefix = '%';
+          var prefix = '!!';
           if (message.content.startsWith(prefix + 'موسيقى')) {
       let embed = new Discord.RichEmbed()
       .addField('%play' ,'   :headphones:تشغيل الاغنيه باسم او برابط:headphones: ')
