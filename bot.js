@@ -204,60 +204,90 @@ message.channel.send(embed)
 
 
 
+var fkk =[
+        {f:"بسم الله الرحمن الرحيم",k:"ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م"},
+        {f:"باص",k:"ب ا ص"},
+        {f:"عربة",k:"ع ر ب ة"},
+        {f:"سيارة",k:"س ي ا ر ة"},
+        {f:"سيرفرنا احلى سيرفر",k:"س ي ر ف ر ن ا ا ح ل ى س ي ر ف ر"},
+        {f:"العنود",k:"ا ل ع ن و د"},
+        {f:"المستتكعكبتيه",k:"ا ل م س ت ت ك ع ك ب ت ي ه"},
+        {f:"دحوم",k:"د ح و م"},
+        {f:"اونرنا احلى اونر",k:"ا و ن ر ن ا ا ح ل ى ا و ن ر"},
+        {f:"الحياة حلوة",k:"ا ل ح ي ا ة ح ل و ة"},
+        {f:"كازخستان",k:"ك ا ز خ س ت ا ن"},
+        {f:"لحم الحمام حلال ولحم الحمار حرام ",k:"ل ح م ا ل ح م ا م ح ل ا ل و ل ح م ا ل ح م ا ر ح ر ا م"},
+        {f:"استونيا",k:"ا س ت و ن ي ا"},
+        {f:"وجغمه",k:"ل ق م ة و ج غ م ه"},
+        {f:"زنديق",k:"ز ن د ي ق"},
+        {f:"استراليا",k:"ا س ت ر ا ل ي ا"},
+        {f:"سوريا ",k:"س و ر ي ا"},
+        {f:"الاردن",k:"ا ل ا ر د ن"},
+        {f:"طماطم ",k:"ط م ا ط م"},
+        {f:"سارة",k:"س ا ر ة"},
+        {f:"دراجون",k:"د ر ا ج و ن"},
+        {f:"سيرفر",k:"س ي ر ف ر"},
+        {n:"الجبل",m:"ا ل ج ب ل"},
+        {n:"هضبة",m:"ه ض ب ة"},
+        {n:"خواطر",m:"خ و ا ط ر"},
+        {n:"ارحبو",m:"ا ر ح ب و"},
+        {n:"اطنخ سيرفر",m:"ا ط ن خ س ي ف ر"},
+        {n:"احبك",m:"ا ح ب ك"},
+        {n:"سبرايز",m:"س ب ر ا ي ز"},
+        {n:"ولي على أمتك",m:"و ل ي ع ل ى أ م ت ك"},
+        {n:"الو محد",m:"ا ل و م ح م د"},
+        {n:"جوكر",m:"ج و ك ر"},
+        {n:"كريزي",m:"ك ر ي ز ي"},
+	{n:"فلسطين",m:"ف ل س ط ي ن"},
+	{n:"مصر",m:"م ص ر"},
+	{n:"بحبك",m:"ب ح ب ك"},
+	
+	
+   ];
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const UserBlocked = new Set(); 
 const pretty = require('pretty-ms')
 ,ti={};
-var al7arthyCodes = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_682a1cus5.png","https://d.top4top.net/p_682pycol4.png","https://c.top4top.net/p_682vqehy3.png","https://b.top4top.net/p_682mlf9d2.png","https://a.top4top.net/p_6827dule1.png","https://b.top4top.net/p_682g1meb10.png","https://a.top4top.net/p_682jgp4v9.png","https://f.top4top.net/p_682d4joq8.png","https://e.top4top.net/p_6828o0e47.png","https://d.top4top.net/p_6824x7sy6.png","https://c.top4top.net/p_682gzo2l5.png","https://b.top4top.net/p_68295qg04.png","https://a.top4top.net/p_682zrz6h3.png","https://f.top4top.net/p_6828vkzc2.png","https://e.top4top.net/p_682i8tb11.png"]
-var al7arthyCodes2 = ["📙__60%__  **|**  📘__40%__","📙__63%__  **|**  📘__37%__","📙__89%__  **|**  📘__11%__","📙__97%__  **|**  📘__3%__"]
-client.on('message', message => {
-    if(!message.guild) return;
-    if (message.author.bot) return;
-      let id = message.author.id,prefix="%";//البريفكس
-      if (ti[id] && (new Date).getTime() - ti[id] < 20*1000) {
-          let r = (new Date).getTime() - ti[id];
-          r = 20*1000 - r;
-      message.channel.send(` **Please wait ${pretty(r, {verbose:true})}**`).then(m => m.delete(1000));
-      return;
-      }
-      if ( message.content == prefix+'لو خيروك'){
-         
-          try{
-  }catch(e){
- 
+   client.on("message", async message => {
+	   var prefix = "%";
+    if(message.content == prefix+"فكك"){
+        if(UserBlocked.has(message.guild.id)) return message.channel.send("هناك جلسة .")
+        UserBlocked.add(message.guild.id)
+        var ask = fkk[Math.floor(Math.random() * fkk.length)];
+        let embed = new Discord.RichEmbed()
+        .setTitle('فكك كلمه')
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .setColor("RANDOM")
+        .setDescription(ask.f);
+        message.channel.sendEmbed(embed).then(msg=> msg.delete(200000))
+        const msgs = await message.channel.awaitMessages(msg => msg.author.id !== client.user.id ,{maxMatches:1,time:100000});
+            UserBlocked.delete(message.guild.id)
+        msgs.forEach(result => {
+           if(result.author.id == client.user.id) return;
+           if(result.content == "فكك") return
+           if(result.content == ask.k){
+
+             let embeds = new Discord.RichEmbed()
+             .setTitle(':white_check_mark: اجابة صحيحة')
+             .setAuthor(message.author.username, message.author.avatarURL)
+             .setColor("RANDOM")
+             .setDescription(`**${result.author.username}** الإجابة صحيحة`);
+                message.channel.sendEmbed(embeds);                return;
+           } else {
+
+                               var embedx = new Discord.RichEmbed()
+             .setTitle(':x:خطاء')
+             .setAuthor(message.author.username, message.author.avatarURL)
+             .setColor("RANDOM")
+             .setDescription(`**${result.author.username}** الإجابة خاطئة`);
+
+                message.channel.sendEmbed(embedx);
+           }
+     });
   }
-         var Embed = new Discord.RichEmbed()
-.setImage(al7arthyCodes[Math.floor(Math.random() * al7arthyCodes.length)])
-message.channel.sendEmbed(Embed).then(msg => {
-    msg.react('📘').then( r => {
-        msg.react('📙')
- 
-        let blueFilter = (reaction, user) => reaction.emoji.name === '📘' && user.id === message.author.id;
-    let orangeFilter = (reaction, user) => reaction.emoji.name === '📙' && user.id === message.author.id;
- 
- 
-    let blue = msg.createReactionCollector(blueFilter, { time: 15000 });
-    let orange = msg.createReactionCollector(orangeFilter, { time: 15000 });
- 
- 
-    blue.on("collect", r => {
-        msg.delete();
-        message.channel.send(al7arthyCodes2[Math.floor(Math.random() * al7arthyCodes2.length)]).then(m => m.delete(60000));
- 
-        })
-       
- orange.on("collect", r => {
-        msg.delete();
-        message.channel.send(al7arthyCodes2[Math.floor(Math.random() * al7arthyCodes2.length)]).then(m => m.delete(60000));
- 
-        })
- 
-                                })
-                                })
-                              ti[id] = (new Date).getTime()
-                                }
-                                });
+});
 
 
 
