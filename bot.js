@@ -217,6 +217,180 @@ client.on('message', msg => {
 
 
 
+        client.on('message', message => {
+          var prefix = '!!';
+          if (message.content.startsWith(prefix + 'العامه')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%دعوه' ,'يتم ارسال رساله لك في الخاص ويوجد بها رابط البوت')
+      .addField('%server' ,'يعطيك معلومات السيرفر')
+      .addField('%inv' ,'يعطيك كم شخص جبت للسيرفر')
+      .addField('%support' ,'رابط سيرفر الدعم الفني ')
+      .addField('%tg' ,'يترجم لك الى 40 لغه تريدها')
+      .addField('%bots' ,'يعطيك كم بوت موجود في السيرفر')
+      .addField('%bans' ,'يعطيك عدد الاشخاص الي مبندين في السيرفر ')
+      .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
+      .addField('%min' ,'يعطيك صوره سكن ماين كرافت يجب كتابة اسم الشخص ')
+      .addField('%المعلومات' ,'يعطيك معلومات عن البوت ')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
+
+
+client.on('message', message => {
+  if (message.content.startsWith("%صوره")) {
+      var mentionned = message.mentions.users.first();
+  var Nizx;
+    if(mentionned){
+        var Nizx = mentionned;
+    } else {
+        var Nizx = message.author;
+        
+    }
+      const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setImage(`${Nizx.avatarURL}`)
+    message.channel.sendEmbed(embed);
+  }
+});
+
+
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'العاب')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%عقاب' ,'لعبة العقاب')
+      .addField('%حكم' ,'لعبة الحكم')
+      .addField('%مريم' ,'لعبة مريم')
+      .addField('%فكك' ,'لعبه فكك يعطيك كلمات لازم تعملها تفكيك')
+      .addField('%لو خيروك' ,'لعبة لو خيروك')
+      .addField('%خواطر' ,'لعبة خواطر')
+      .addField('%اسئلني' ,'لعبه اسئلني يعطيك سؤال يجيب عليك الجواب عليه خلال دقيقه')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
+
+
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'موسيقى')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%play' ,'   :headphones:تشغيل الاغنيه باسم او برابط:headphones: ')
+      .addField('%stop' ,'    :mute: ايقاف الاغنيه:mute:   ')
+      .addField('%skip' ,'     :play_pause: تخطي الاغنيه :play_pause:  ')
+      .addField('%pause' ,'    :clock1: ايقاف الاغنيه مؤقت:clock1:  ')
+      .addField('%resume' ,'    :musical_note: تكملةالاغنيه:musical_note:  ')
+      .addField('%queue' ,'    :pencil: اظهار قائمة التشغيل :pencil:   ')
+      .addField('%np' ,'    :page_facing_up: اظهار الاغنية اللي انت مشغلها حاليا:page_facing_up:  ')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
