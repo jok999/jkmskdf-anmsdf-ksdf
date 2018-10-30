@@ -24,7 +24,7 @@ var channel = "487425917648502801";//ايدي الروم
 
  client.on('ready', function(){	
     var ms = 10000 ;	
-    var setGame = ['يسعد مساكم','يسعد صباحكم'];	
+    var setGame = ['im is back'];	
     var i = -1;	
     var j = 0;	
     setInterval(function (){	
@@ -35,7 +35,7 @@ j = 1;
             j = -1;	
       }	
        i = i+j;	
-              client.user.setGame(setGame[i],`https://www.twitch.tv/jokar_999`);
+              client.user.setGame(setGame[i],`https://www.twitch.tv/vr`);
 }, ms);	
 	
 });
