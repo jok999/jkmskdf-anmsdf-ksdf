@@ -35,11 +35,10 @@ j = 1;
             j = -1;	
       }	
        i = i+j;	
-              client.user.setGame(setGame[i],`https://www.twitch.tv/vr`);
+              client.user.setGame(setGame[i],`https://www.twitch.tv/vv`);
 }, ms);	
 	
 });
-
 
 
 
