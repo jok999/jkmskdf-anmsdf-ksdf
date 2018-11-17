@@ -294,7 +294,15 @@ client.on('message', message => {
 
 
 
-
+client.on('message',function(message) {
+    let prefix = "%";
+let args = message.content.split(" ").slice(1).join(" ");
+if(message.content.startsWith(prefix + "say")) {
+    if(message.author.id !== '310129588397277185') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+if(!args) return;
+message.channel.send(` ${args}`); // محطوط # عشان محد يستخدم البوت لتبنيد / طرد احد من السيرفر
+}
+});
 
 
 
@@ -406,3 +414,4 @@ client.on('message', message => {
 
 
 client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN2);
